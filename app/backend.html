@@ -1,0 +1,103 @@
+---
+title: Backend
+layout: ./app/layout.ejs
+engine: ejs
+current: backend
+---
+<main id="app">
+  <!-- 表格形式 -->
+  <section class="container">
+    <h2 class="mt-2 font-weight-bold d-flex justify-content-between">
+      產品列表 (後臺管理)
+    </h2>
+    <div class="d-flex justify-content-end mb-2">
+      <button type="button" class="btn btn-primary px-3" data-toggle="modal"
+        data-target="#addProductModal">新增產品</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>分類</th>
+          <th>產品名稱</th>
+          <th>原價</th>
+          <th>售價</th>
+          <th>是否啟用</th>
+          <th>編輯</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{listProduct}}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">新增產品</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="#">
+              <div class="form-row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="" class="">產品圖片</label>
+                    <input type="text" placeholder="請輸入圖片網址" class="form-control">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="" class="">產品名稱</label>
+                    <input type="text" placeholder="產品名稱" class="form-control">
+                  </div>
+                  <div class="form-row justify-content-between">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="" class="">分類</label>
+                        <input type="text" placeholder="分類名稱" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="" class="">單位</label>
+                        <input type="text" placeholder="台" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="" class="">原價</label>
+                        <input type="number" placeholder="" class="form-control">
+                      </div>
+                    </div>
+                   
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="" class="">售價</label>
+                        <input type="number" placeholder="" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
