@@ -12,7 +12,7 @@ current: backend
     </h2>
     <div class="d-flex justify-content-end mb-2">
       <button type="button" class="btn btn-primary px-3" data-toggle="modal"
-        data-target="#addProductModal">新增產品</button>
+        data-target="#addProductModal" @click="cleanDate">新增產品</button>
     </div>
     <table class="table">
       <thead>
@@ -61,7 +61,7 @@ current: backend
                     <label for="" class="">產品圖片</label>
                     <input type="text" placeholder="請輸入圖片網址" class="form-control" v-model="product.imgUrl">
                   </div>
-                  <img :src="product.imgUrl" alt="" class="img-fluid">
+                  <img :src="product.imgUrl" :alt="product.imgAlt" class="img-fluid">
                 </div>
                 <div class="col-6">
                   <div class="form-group">
@@ -140,53 +140,53 @@ current: backend
                 <div class="col-6">
                   <div class="form-group">
                     <label for="" class="">產品圖片</label>
-                    <input type="text" placeholder="請輸入圖片網址" class="form-control" v-model="temp.imgUrl">
+                    <input type="text" placeholder="請輸入圖片網址" class="form-control" v-model="product.imgUrl">
                   </div>
-                  <img :src="temp.imgUrl" alt="" class="img-fluid">
+                  <img :src="product.imgUrl" alt="" class="img-fluid">
                 </div>
                 <div class="col-6">
                   <div class="form-group">
                     <label for="" class="">產品名稱</label>
-                    <input type="text" placeholder="產品名稱" class="form-control" v-model="temp.title">
+                    <input type="text" placeholder="產品名稱" class="form-control" v-model="product.title">
                   </div>
                   <div class="form-row justify-content-between">
                     <div class="col-6">
                       <div class="form-group">
                         <label for="" class="">分類</label>
-                        <input type="text" placeholder="分類名稱" class="form-control" v-model="temp.category">
+                        <input type="text" placeholder="分類名稱" class="form-control" v-model="product.category">
                       </div>
                     </div>
                     <div class="col-6">
                       <div class="form-group">
                         <label for="" class="">單位</label>
-                        <input type="text" placeholder="台" class="form-control" v-model="temp.unit">
+                        <input type="text" placeholder="台" class="form-control" v-model="product.unit">
                       </div>
                     </div>
                     <div class="col-6">
                       <div class="form-group">
                         <label for="" class="">原價</label>
-                        <input type="number" placeholder="" class="form-control" v-model="temp.origin_price">
+                        <input type="number" placeholder="" class="form-control" v-model="product.origin_price">
                       </div>
                     </div>
 
                     <div class="col-6">
                       <div class="form-group">
                         <label for="" class="">售價</label>
-                        <input type="number" placeholder="" class="form-control" v-model="temp.price">
+                        <input type="number" placeholder="" class="form-control" v-model="product.price">
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="" class="">產品圖片描述</label>
-                    <textarea type="text" placeholder="" class="form-control" v-model="temp.imgAlt"></textarea>
+                    <textarea type="text" placeholder="" class="form-control" v-model="product.imgAlt"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="" class="">產品說明</label>
-                    <textarea type="text" placeholder="" class="form-control" v-model="temp.content"></textarea>
+                    <textarea type="text" placeholder="" class="form-control" v-model="product.content"></textarea>
                   </div>
                   <div class="form-checkbox">
-                    <input type="checkbox" id="isUp" placeholder="" class=""  v-model="temp.enabled">
+                    <input type="checkbox" id="isUp" placeholder="" class=""  v-model="product.enabled">
                     <label for="isUp" class="">是否啟用</label>
                   </div>
                 </div>
@@ -196,7 +196,7 @@ current: backend
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" @click="updateData()" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-primary" @click="updateData" data-dismiss="modal" >Save</button>
           </div>
         </div>
       </div>
