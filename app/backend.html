@@ -12,7 +12,7 @@ current: backend
     </h2>
     <div class="d-flex justify-content-end mb-2">
       <button type="button" class="btn btn-primary px-3" data-toggle="modal"
-        data-target="#addProductModal" @click="cleanDate">新增產品</button>
+        data-target="#addProductModal" @click="">新增產品</button>
     </div>
     <table class="table">
       <thead>
@@ -34,10 +34,10 @@ current: backend
           <td class="text-center">{{item.enabled}}</td>
           <td class="">
             <button class="btn btn-warning" @click="edit(item)" data-toggle="modal"
-            data-target="#editProductModal">修改</button>
+            data-target="#addProductModal">修改</button>
+            <!-- <button class="btn btn-danger" @click="modal(`deleteData`, item)">刪除</button> -->
             <button class="btn btn-danger" @click="remove(item)">刪除</button>
           </td>
-
         </tr>
       </tbody>
     </table>
@@ -110,21 +110,18 @@ current: backend
                   </div>
                 </div>
               </div>
-
-
-
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" @click="addProduct" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-primary" @click="updateData" data-dismiss="modal">Save</button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- edit Modal -->
-    <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel"
+    <!-- <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -191,7 +188,6 @@ current: backend
                   </div>
                 </div>
               </div>
-
             </form>
           </div>
           <div class="modal-footer">
@@ -200,7 +196,7 @@ current: backend
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </section>
 </main>
