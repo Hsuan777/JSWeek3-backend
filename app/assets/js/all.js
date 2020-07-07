@@ -10,12 +10,13 @@ let app = new Vue({
       imgAlt:``,
       enabled:true,
       origin_price:``,
+      services:[],
       price:``,
       unit:`間`
     },
     listProduct:[],
     // 暫存物件，不讓初始化資料被修改
-    temporary:{}
+    temporary:{},
   },
   methods:{
     /* 將物件清空會觸發 Vue執行渲染畫面，也就是 v-for會更新畫面 */
