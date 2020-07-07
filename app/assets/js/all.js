@@ -14,7 +14,35 @@ let app = new Vue({
       price:``,
       unit:`間`
     },
-    listProduct:[],
+    listProduct:[
+      {
+        id:`456456`,
+        imgUrl:`https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80`,
+        title:`文青雙人房`,
+        category:`雙人房`,
+        content:``,
+        imgAlt:`文青雙人房`,
+        enabled:true,
+        origin_price:`2500`,
+        services:["早餐"],
+        price:`1500`,
+        unit:`間`
+      },
+      {
+        id:`8781278`,
+        imgUrl:`https://images.unsplash.com/photo-1486304873000-235643847519?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80`,
+        title:`簡易單人房`,
+        category:`單人房`,
+        content:``,
+        imgAlt:`簡易單人房`,
+        enabled:true,
+        origin_price:`1500`,
+        services:["早餐", "禁菸"],
+        price:`1000`,
+        unit:`間`
+      },
+
+    ],
     // 暫存物件，不讓初始化資料被修改
     temporary:{},
   },
@@ -84,6 +112,13 @@ let app = new Vue({
         }
       })
       vm.cleanDate();
+    },
+    isUpFn(isUp){
+      if(isUp){
+        return `已開放`;
+      } else{
+        return `未開放`;
+      }
     }
   }
 })
