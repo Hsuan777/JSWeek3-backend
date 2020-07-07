@@ -16,7 +16,31 @@ var app = new Vue({
       price: "",
       unit: "\u9593"
     },
-    listProduct: [],
+    listProduct: [{
+      id: "456456",
+      imgUrl: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+      title: "\u6587\u9752\u96D9\u4EBA\u623F",
+      category: "\u96D9\u4EBA\u623F",
+      content: "",
+      imgAlt: "\u6587\u9752\u96D9\u4EBA\u623F",
+      enabled: true,
+      origin_price: "2500",
+      services: ["早餐"],
+      price: "1500",
+      unit: "\u9593"
+    }, {
+      id: "8781278",
+      imgUrl: "https://images.unsplash.com/photo-1486304873000-235643847519?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80",
+      title: "\u7C21\u6613\u55AE\u4EBA\u623F",
+      category: "\u55AE\u4EBA\u623F",
+      content: "",
+      imgAlt: "\u7C21\u6613\u55AE\u4EBA\u623F",
+      enabled: true,
+      origin_price: "1500",
+      services: ["早餐", "禁菸"],
+      price: "1000",
+      unit: "\u9593"
+    }],
     // 暫存物件，不讓初始化資料被修改
     temporary: {}
   },
@@ -87,6 +111,13 @@ var app = new Vue({
         }
       });
       vm.cleanDate();
+    },
+    isUpFn: function isUpFn(isUp) {
+      if (isUp) {
+        return "\u5DF2\u958B\u653E";
+      } else {
+        return "\u672A\u958B\u653E";
+      }
     }
   }
 });
